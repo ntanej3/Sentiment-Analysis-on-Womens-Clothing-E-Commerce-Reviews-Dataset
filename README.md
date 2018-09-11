@@ -26,4 +26,9 @@ To do exploratory sentiment analysis and tie it back to product types.
 ### Findings: 
 Based on the analysis, it is clear that both the reviews for Tops and Dresses contain positive sentiment in abundance to negative sentiment. Anecdotal observation from the plots also suggests that reviews for Dresses tend to be more positive than reviews for Tops.
 
+| | |
+|--|--|
+|![](https://github.com/ntanej3/Sentiment-Analysis-on-Womens-Clothing-E-Commerce-Reviews-Dataset/blob/master/analysis/positive_sentiment_analysis_for_dresses.png)|![](https://github.com/ntanej3/Sentiment-Analysis-on-Womens-Clothing-E-Commerce-Reviews-Dataset/blob/master/analysis/negative_sentiment_analysis_for_dresses.png)|
+|![](https://github.com/ntanej3/Sentiment-Analysis-on-Womens-Clothing-E-Commerce-Reviews-Dataset/blob/master/analysis/positive_sentiment_analysis_for_tops.png)|![](https://github.com/ntanej3/Sentiment-Analysis-on-Womens-Clothing-E-Commerce-Reviews-Dataset/blob/master/analysis/negative_sentiment_analysis_for_tops.png)|
+
 
