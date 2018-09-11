@@ -3,15 +3,12 @@
 ### Author: Neha Taneja
 
 ## Read the .txt file 
-
-lines = readLines(file("~/Downloads/Womens Clothing E-Commerce Reviews.txt", open = "r"), encoding = "UTF-8")
+lines = readLines(file("Womens Clothing E-Commerce Reviews.txt", open = "r"), encoding = "UTF-8")
 
 ## Find the number of reviews.
-
 length(grep("^.{0,}Review Text:\\t{1,}.{1,}$", lines))
 
 ## extract information of "Title", "Review text", "Rating" and "Department name", and save them into 4 ## vectors
-
 titles = c()
 review_texts = c()
 ratings = c()
@@ -35,40 +32,32 @@ split_lines = lapply(seq_along(lines), split_parts)
 
 
 ## Find the uncleaned titles and their format
-
-
 titles[head(grep('^".{0,}"$', titles), 3)]
 
 ## Change the format of all the uncleaned titles as: 
 ##  "\"xxxxxxx\"" ----> "xxxxxxx" 
-
 titles = gsub('^"(.{0,})"$', "\\1", titles, perl = T)
 
 ## sentimental analysis for the reviews between Dresses and Tops department.
 
 # save review_top and review_dress in different vectors
-
-
 move_review_data_frame = data.frame(title=titles, review_text=review_texts, rating=ratings, department = departments)
 
 review_top = as.vector(move_review_data_frame[move_review_data_frame$department %in% c("Tops"), "review_text"])
 
 review_dress = as.vector(move_review_data_frame[move_review_data_frame$department %in% c("Dresses"), "review_text"])
 
-##(7) 
 ## Clean the data by eliminating apostrophes, numbers, and by changing all characters into lowercase 
 ## for review_dress and review_top.
 
 ## For example:
 ## "Finally a dress that is not too short! i'm 5'11 and ordered two sizes."
 ## ----> "finally a dress that is not too short im  and ordered two sizes"
-
 review_dress = tolower(gsub("[^[:alpha:] ]", "", review_dress))
 review_top = tolower(gsub("[^[:alpha:] ]", "", review_top))
 
 
 ## Split the reviews by removing blanks and save them to respective lists: token_top and token_dress 
-
 removeEmptyWords = function(list) {
   return(list[list != ""])
 }
@@ -77,7 +66,6 @@ token_top = removeEmptyWords(unlist(strsplit(review_dress, " ")))
 token_dress = removeEmptyWords(unlist(strsplit(review_top, " ")))
 
 ## token frequency for each department
-
 token_top_freq = table(token_top)
 token_dress_freq = table(token_dress)
 
