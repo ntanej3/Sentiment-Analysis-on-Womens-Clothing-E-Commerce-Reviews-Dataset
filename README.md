@@ -1,6 +1,10 @@
 # Sentiment-Analysis-on-Womens-Clothing-E-Commerce-Reviews-Dataset
 
-### Source: Kaggle
+### Sentiment analysis training data source 
+1. http://ptrckprry.com/course/ssd/data/positive-words.txt
+2. http://ptrckprry.com/course/ssd/data/negative-words.txt
+
+### Review data source: Kaggle
 #### Columns in the dataset:
 
 |Name|Meaning|
@@ -21,3 +25,5 @@ To do exploratory sentiment analysis and tie it back to product types.
 
 ### Findings: 
 Based on the analysis, it is clear that both the reviews for Tops and Dresses contain positive sentiment in abundance to negative sentiment. Anecdotal observation from the plots also suggests that reviews for Dresses tend to be more positive than reviews for Tops.
+
+
